@@ -1,0 +1,88 @@
+npx create-react-app my-app --template redux
+
+npm install --save-dev redux-devtools
+
+# NPM
+npm install redux
+
+# Yarn
+yarn add redux
+
+Để khởi tạo ứng dụng ta sử dụng công cụ create-react-app của Facebook
+
+    sudo npm install -g create-react-app
+    create-react-app test-react-redux
+
+Cài đặt thư viện
+
+    cd test-react-redux
+    npm install redux react-redux
+    npm install react-router-dom
+    -- react-redux có nhiệm vụ kết nối giữa react và redux	
+    
+* React
+    - component : là thẻ html mà ta tự định nghĩa
+    - prop : là thuộc tính của component
+        + Là dữ liệu truyền từ component cha xuống component con.
+        + Không thể tự động thay đổi trong component hiện tại.
+        + Có thể thay đổi từ component cha ( do cha truyền xuống ).
+    - state: chỉ dùng trong 1 component
+    - Global State (thường gặp trong Redux): sử dụng ở nhiều component khác nhau
+    - side effect : 
+    - middleware :
+    - lifecycle methods
+        co ban co cai componentDidMount, componentDidUpdate, componentWillUnmount la xai nhiu nhat
+
+        didmount la khi component render lan dau
+
+        didupdate la khi render lan dau + thay doi trong usestate,..
+
+        willl unmount la khi component sap bi huy
+    - responsive
+    - Hooks : chỉ dùng trong function components và custom Hooks
+        + Basic Hooks
+            . useState() : hàm này nhận đầu vào là giá trị khởi tạo của 1 state và trả ra 1 mảng gồm có 2 phần tử
+                    chỉ nên sử dụng để quản lý các UI State
+                1 : state hiện tại
+                2 : 1 function dùng để update state
+            . useSelector() : Thay thế cho việc bạn dùng mapStateToProps để lấy state của Redux store ra sử dụng trong component. selector sẽ được gọi dựa theo function bạn truyền vào trong tham số đầu tiên của useSelector, với tham số đầu tiên của function chính là store state.
+                1. có thể gọi nhiều lần useSelector() trong 1 function component, mỗi lần gọi nó sẽ tạo 1 subscription tới redux store riêng.
+            . useDispatch() : hook này trả về một tham chiếu tới dispatch function trong redux store. dùng nó để dispatch một action
+            . useStore() : cái tên nói lên tất cả, giống với việc bạn lấy Redux store và truyền store vàp <Provider>. không nên dùng nó, hãy dùng useSelector vì nó đã giải quyết được vấn đề lấy redux state của bạn rồi.
+        + Additional Hooks
+    - UI Component có thư viện: Material-UI, React-Bootstrap & reactstrap, React Toolbox ...
+    - Route thì có thư viện React Router DOM
+    - Quản lý state có Redux
+    Tham khảo: https://viblo.asia/p/khi-nao-dung-props-state-va-global-state-eW65GLrxKDO
+chú thích :  Có một tham số key để phòng tránh việc React phiền phức cảnh báo về việc render ra nhiều đối tượng mà không có thuộc tính key
+* Redux
+    - store
+    - action
+    - reducer
+
+    - mapStateToProps : một bộ lọc (filter) sử dụng để lấy (select) những thứ trong cái thùng chứa mà component yêu cầu
+    - mapDispatchToProps : nhận dispatch và props và có nghĩa là để bạn ràng buộc người tạo hành động gửi đi để khi bạn thực hiện chức năng kết quả, hành động sẽ được gửi đi.
+    - connect() : hàm này biết vị trí của thùng chứa và truyền (pass) nó vào hàm mapStateToProps
+    Tham khảo: https://insights.innovatube.com/redux-v%E1%BB%9Bi-react-native-63ea25062084
+* Redux-middleware: có nhiệm vụ tạo ra side-effect và xử lý trước khi gọi action.
+    Những thứ bên dưới đều là thư viện của middleware.    
+    + Saga
+        Call (Gọi tới api hoặc 1 Promise, có truyền tham số)
+        Fork: rẽ nhánh sang 1 generator khác.
+        Take: tạm dừng cho đến khi nhận được action
+        Race: chạy nhiều effect đồng thời, sau đó hủy tất cả nếu một trong số đó kết thúc.
+        Call: gọi function. Nếu nó return về một promise, tạm dừng saga cho đến khi promise được giải quyết.
+        Put: dispatch một action. (giống như dispatch của redux-thunk)
+        Select: chạy một selector function để lấy data từ state.
+        takeLatest: có nghĩa là nếu chúng ta thực hiện một loạt các actions, nó sẽ chỉ thực thi và trả lại kết quả của của actions cuối cùng.
+        takeEvery: thực thi và trả lại kết quả của mọi actions được gọi.
+        !Imperative Programming
+    + Thunk
+    + Observable
+* Json
+
+* Axios Lib
+khi request API Login, mình dùng lib axios bạn có thể tham khảo tại đây: https://www.npmjs.com/package/react-native-axios Nó là 1 lib để ta request API
+Using cdn:  <script src="https://npmcdn.com/axios/dist/axios.min.js"></script>
+Using npm:  npm install axios
+Using bower:    bower install axios

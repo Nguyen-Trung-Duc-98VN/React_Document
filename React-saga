@@ -1,0 +1,12 @@
+Đã tìm hiểu:
+- Được coi là 1 pattern.
+- React-saga là thư viện của redux middleware.
+- Quản lý side-effect ( thao tác xử lý cần thời gian để phản hồi ).
+- Sử dụng tối đa tính năng Generators ( function* ) của ES6 ( viết async code nhìn giống như là synchronos )
+Đã làm: xây dựng ứng dụng todo đơn giản bằng redux
+Biết thêm về React:
+    - UI Component có thư viện: Material-UI, React-Bootstrap & reactstrap, React Toolbox ...
+    - Route thì có thư viện React Router DOM
+    - Quản lý state có Redux
+
+Cài đặt: npm i redux-saga --save-dev
