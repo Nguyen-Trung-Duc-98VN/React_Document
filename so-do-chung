@@ -6,19 +6,7 @@ npm install --save-dev redux-devtools
 npm install redux
 
 # Yarn
-yarn add redux
-
-Để khởi tạo ứng dụng ta sử dụng công cụ create-react-app của Facebook
-
-    sudo npm install -g create-react-app
-    create-react-app test-react-redux
-
-Cài đặt thư viện
-
-    cd test-react-redux
-    npm install redux react-redux
-    npm install react-router-dom
-    -- react-redux có nhiệm vụ kết nối giữa react và redux	
+yarn add redux	
     
 * React
     - component : là thẻ html mà ta tự định nghĩa
